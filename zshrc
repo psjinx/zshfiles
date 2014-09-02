@@ -179,3 +179,15 @@ source /usr/local/bin/virtualenvwrapper.sh
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export PIP_DOWNLOAD_CACHE=$HOME/.pip_download_cache
+function gi() { curl http://www.gitignore.io/api/$@ ;}
+
+alias e='emacsclient -t'
+alias ec='emacsclient -c'
+
+export GOPATH=~/go
+export PATH=$PATH:$GOPATH/bin
+alias pip_freeze='GITROOT=$(git rev-parse --show-toplevel) && cd $GITROOT && pip freeze --local > requirements.txt && cd -'
+alias audio_dl='noglob youtube-dl -f "bestaudio" -o "~/Music/audio-downloads/%(title)s.%(ext)s" '
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
